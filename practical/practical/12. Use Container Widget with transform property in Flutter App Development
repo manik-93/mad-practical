@@ -1,0 +1,57 @@
+12. Use Container Widget with transform property in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The Container widget in Flutter uses the transform property to apply geometric transformations to its child.
+
+It allows you to:
+
+Rotate
+Scale
+Translate (move)
+Skew
+
+This is done using the Matrix4 class.
+
+//main code
+
+import 'package:flutter/material.dart';
+import 'dart:math';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ContainerTransformExample(),
+    );
+  }
+}
+
+class ContainerTransformExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Container Transform Example"),
+      ),
+      body: Center(
+        child: Container(
+          height: 120,
+          width: 200,
+          color: Colors.red,
+          transform: Matrix4.rotationZ(pi / 6), // Rotate 30 degrees
+          child: Center(
+            child: Text(
+              "Rotated Box",
+              style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

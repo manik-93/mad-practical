@@ -1,0 +1,52 @@
+8. Use Container Widget with margin property in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The Container widget in Flutter uses the margin property to add space outside the container.
+It creates distance between the container and surrounding widgets.
+
+Margin is defined using EdgeInsets
+Helps in proper spacing and layout design
+
+//main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ContainerMarginExample(),
+    );
+  }
+}
+
+class ContainerMarginExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Container Margin Example"),
+      ),
+      body: Center(
+        child: Container(
+          margin: EdgeInsets.all(30),
+          height: 100,
+          width: 200,
+          color: Colors.orange,
+          child: Center(
+            child: Text(
+              "With Margin",
+              style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,48 @@
+4. Use Column Widget in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The Column widget in Flutter is used to arrange multiple widgets vertically (one below another).
+It is commonly used to design layouts like forms, lists, and structured UI sections.
+
+Key properties:
+
+mainAxisAlignment → controls vertical spacing
+crossAxisAlignment → controls horizontal alignment
+
+//main code
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ColumnExample(),
+    );
+  }
+}
+
+class ColumnExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Column Widget Example"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text("First Item", style: TextStyle(fontSize: 20)),
+          Text("Second Item", style: TextStyle(fontSize: 20)),
+          Text("Third Item", style: TextStyle(fontSize: 20)),
+        ],
+      ),
+    );
+  }
+}

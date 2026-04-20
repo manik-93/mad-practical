@@ -1,0 +1,77 @@
+🔹 Step 1: Open Existing Project
+Open VS Code
+Open your PWA_Project
+Ensure files exist:
+index.html
+manifest.json
+sw.js
+icons/
+
+🔹 Step 2: Update sw.js for Static Caching
+
+Replace your previous sw.js code with:
+
+const CACHE_NAME = "static-cache-v1";
+
+// Files to cache
+const FILES_TO_CACHE = [
+  "/",
+  "/index.html",
+  "/manifest.json"
+];
+
+// Install Event → Cache files
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then((cache) => {
+        console.log("Caching static files");
+        return cache.addAll(FILES_TO_CACHE);
+      })
+  );
+});
+
+// Fetch Event → Serve from cache
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request)
+      .then((response) => {
+        return response || fetch(event.request);
+      })
+  );
+});
+
+
+🔹 Step 3: Update index.html (if not already done)
+
+Make sure service worker is registered:
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(() => console.log("SW Registered"));
+}
+</script>
+
+
+🔹 Step 4: Run the Application
+Right-click index.html
+Click Open with Live Server
+App opens in browser
+
+
+🔹 Step 5: Verify Static Caching
+Check Cache:
+Press F12
+Go to Application Tab
+Click Cache Storage
+You will see:
+static-cache-v1
+Cached files (index.html, manifest.json)
+
+
+Test Offline Mode:
+Go to Network Tab
+Select Offline
+Refresh page
+Website still loads ✔️ (from cache)

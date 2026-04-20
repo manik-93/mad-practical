@@ -1,0 +1,51 @@
+6. Use Container Widget with color property in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The Container widget in Flutter can use the color property to set the background color of the container.
+It is useful for:
+
+Styling UI components
+Highlighting sections
+Improving visual appearance
+
+//main code
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ContainerColorExample(),
+    );
+  }
+}
+
+class ContainerColorExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Container Color Example"),
+      ),
+      body: Center(
+        child: Container(
+          color: Colors.blue,
+          height: 100,
+          width: 200,
+          child: Center(
+            child: Text(
+              "Colored Container",
+              style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

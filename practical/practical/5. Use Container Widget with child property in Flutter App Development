@@ -1,0 +1,49 @@
+5. Use Container Widget with child property in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The Container widget in Flutter is a versatile widget used for styling and positioning.
+When using the child property, it allows you to place a single widget inside the container.
+
+This helps in:
+
+Wrapping UI elements
+Applying styling (color, padding, etc.) to a child widget
+Structuring layouts
+
+//main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ContainerChildExample(),
+    );
+  }
+}
+
+class ContainerChildExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Container with Child"),
+      ),
+      body: Center(
+        child: Container(
+          child: Text(
+            "Hello Flutter",
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
+        ),
+      ),
+    );
+  }
+}

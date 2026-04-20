@@ -1,0 +1,51 @@
+10. Use Container Widget with alignment property in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The Container widget in Flutter uses the alignment property to position its child inside the container.
+
+It controls where the child widget appears
+Uses predefined values like:
+Alignment.center
+Alignment.topLeft
+Alignment.bottomRight
+
+//main code
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ContainerAlignmentExample(),
+    );
+  }
+}
+
+class ContainerAlignmentExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Container Alignment Example"),
+      ),
+      body: Center(
+        child: Container(
+          height: 150,
+          width: 250,
+          color: Colors.teal,
+          alignment: Alignment.bottomRight,
+          child: Text(
+            "Aligned Text",
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
+        ),
+      ),
+    );
+  }
+}

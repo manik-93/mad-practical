@@ -1,0 +1,68 @@
+11. Use Container Widget with decoration property in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The Container widget in Flutter uses the decoration property to apply advanced styling such as:
+
+Background color
+Border
+Border radius (rounded corners)
+Box shadow
+Gradient
+
+It uses the BoxDecoration class for customization.
+
+⚠️ Note: When using decoration, do not use the color property directly (color should be inside BoxDecoration).
+
+//main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ContainerDecorationExample(),
+    );
+  }
+}
+
+class ContainerDecorationExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Container Decoration Example"),
+      ),
+      body: Center(
+        child: Container(
+          height: 150,
+          width: 250,
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            border: Border.all(color: Colors.black, width: 3),
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                blurRadius: 5,
+                spreadRadius: 2,
+              ),
+            ],
+          ),
+          child: Center(
+            child: Text(
+              "Decorated Box",
+              style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

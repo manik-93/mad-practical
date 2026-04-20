@@ -1,0 +1,50 @@
+9. Use Container Widget with padding property in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The Container widget in Flutter uses the padding property to add space inside the container, between its border and its child widget.
+
+Padding is defined using EdgeInsets
+It improves readability and layout spacing
+Unlike margin, padding works inside the contain
+
+//main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ContainerPaddingExample(),
+    );
+  }
+}
+
+class ContainerPaddingExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Container Padding Example"),
+      ),
+      body: Center(
+        child: Container(
+          padding: EdgeInsets.all(20),
+          height: 120,
+          width: 220,
+          color: Colors.purple,
+          child: Text(
+            "With Padding",
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
+        ),
+      ),
+    );
+  }
+}

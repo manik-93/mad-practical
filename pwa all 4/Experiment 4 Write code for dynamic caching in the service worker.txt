@@ -1,0 +1,89 @@
+🔹 Step 1: Open Your Project
+Open VS Code
+Open your PWA_Project
+Ensure:
+index.html
+manifest.json
+sw.js
+
+
+🔹 Step 2: Update sw.js for Dynamic Caching
+
+Replace your sw.js code with:
+
+const CACHE_NAME = "dynamic-cache-v1";
+
+// Install Event
+self.addEventListener("install", (event) => {
+  console.log("Service Worker Installed");
+});
+
+// Activate Event
+self.addEventListener("activate", (event) => {
+  console.log("Service Worker Activated");
+});
+
+// Fetch Event → Dynamic Caching
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      
+      // If found in cache → return it
+      if (response) {
+        return response;
+      }
+
+      // Else fetch from network and cache it
+      return fetch(event.request).then((networkResponse) => {
+        return caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        });
+      });
+
+    })
+  );
+});
+
+
+🔹 Step 3: Ensure Service Worker is Registered
+
+Check index.html:
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(() => console.log("SW Registered"));
+}
+</script>
+
+
+🔹 Step 4: Run the Application
+Right-click index.html
+Click Open with Live Server
+Open browser
+
+
+🔹 Step 5: Verify Dynamic Caching
+Check Cache Storage:
+Press F12
+Go to Application → Cache Storage
+Open:
+dynamic-cache-v1
+You will see files added after visiting pages
+Test Dynamic Behavior:
+Open new pages / reload
+Files automatically get cached ✔️
+
+
+Test Offline:
+Go to Network Tab
+Select Offline
+Refresh page
+Already visited content loads ✔️
+
+
+✅ Final Output
+Data cached dynamically ✔️
+New requests stored automatically ✔️
+Offline support for visited pages ✔️

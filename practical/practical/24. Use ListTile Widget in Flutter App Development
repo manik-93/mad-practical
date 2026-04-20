@@ -1,0 +1,60 @@
+24. Use ListTile Widget in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The ListTile widget in Flutter is used to create a single fixed-height row that typically contains:
+
+Leading icon/image
+Title
+Subtitle
+Trailing widget
+
+It is commonly used inside ListView for displaying list items like contacts, settings, etc.
+
+//main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ListTileExample(),
+    );
+  }
+}
+
+class ListTileExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("ListTile Example"),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text("John Doe"),
+            subtitle: Text("Software Engineer"),
+            trailing: Icon(Icons.arrow_forward),
+            onTap: () {
+              print("Tile Clicked");
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text("Jane Smith"),
+            subtitle: Text("Designer"),
+            trailing: Icon(Icons.arrow_forward),
+          ),
+        ],
+      ),
+    );
+  }
+}

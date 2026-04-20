@@ -1,0 +1,47 @@
+17. Use Icon Button Widget in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The IconButton widget in Flutter is used to create a clickable button with an icon instead of text.
+
+Commonly used in toolbars, app bars, and actions
+Executes a function when pressed
+
+//main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: IconButtonExample(),
+    );
+  }
+}
+
+class IconButtonExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("IconButton Example"),
+      ),
+      body: Center(
+        child: IconButton(
+          icon: Icon(Icons.thumb_up),
+          iconSize: 40,
+          color: Colors.blue,
+          onPressed: () {
+            print("IconButton Pressed");
+          },
+        ),
+      ),
+    );
+  }
+}

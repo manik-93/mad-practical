@@ -1,0 +1,71 @@
+27. Use Flutter Navigation and Routing in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+In Flutter, Navigation and Routing are used to move between different screens (pages) of an app.
+
+Navigation is managed using the Navigator class
+Each screen is called a route
+Common methods:
+Navigator.push() → go to new screen
+Navigator.pop() → return to previous screen
+
+
+💻 Flutter Code Example
+
+//main code
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: FirstScreen(),
+    );
+  }
+}
+
+class FirstScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("First Screen"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Go to Second Screen"),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SecondScreen()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Screen"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Go Back"),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,57 @@
+20. Use GridView Widget in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The GridView widget in Flutter is used to display items in a grid format (rows and columns).
+
+Suitable for image galleries, product lists, etc.
+Scrollable by default
+Can define number of columns using crossAxisCount
+
+//main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: GridViewExample(),
+    );
+  }
+}
+
+class GridViewExample extends StatelessWidget {
+  final List<String> items = List.generate(6, (index) => "Item ${index + 1}");
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("GridView Example"),
+      ),
+      body: GridView.count(
+        crossAxisCount: 2, // 2 columns
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        padding: EdgeInsets.all(10),
+        children: items.map((item) {
+          return Container(
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                item,
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+}

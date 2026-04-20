@@ -1,0 +1,94 @@
+🔹 Step 1: Open VS Code
+Open Visual Studio Code
+Click on File → Open Folder
+Create a new folder (example: PWA_Project)
+Open that folder
+
+
+🔹 Step 2: Create Required Files
+
+Inside your project folder, create:
+
+index.html
+manifest.json
+icons folder (for app icons)
+
+
+
+🔹 Step 3: Write manifest.json Code
+
+Create a file named manifest.json and add this code:
+
+{
+  "name": "My PWA App",
+  "short_name": "PWA",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
+
+
+🔹 Step 4: Add Icons
+Create a folder named icons
+Add:
+icon-192.png
+icon-512.png
+
+
+
+🔹 Step 5: Link Manifest in HTML
+
+Open index.html and write:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PWA Experiment</title>
+
+  <!-- Link Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+</head>
+<body>
+  <h1>My First PWA App</h1>
+</body>
+</html>
+
+
+
+🔹 Step 6: Run the Application
+Method 1 (Recommended): Using Live Server
+Install Live Server Extension in VS Code
+Right-click on index.html
+Click "Open with Live Server"
+Your app will open in browser (like: http://127.0.0.1:5500)
+Method 2: Open Directly
+Double-click index.html
+Opens in browser (but PWA features may not fully work)
+
+
+answer
+🔹 Step 7: Verify Manifest
+Open browser
+Press F12 (Inspect)
+Go to Application Tab
+Click Manifest
+Check if all data is visible ✔️
+✅ Final Output
+Website runs successfully ✔️
+Manifest file linked ✔️
+App ready for PWA features ✔️

@@ -1,0 +1,46 @@
+13. Use FlatButton Widget in Flutter App Development
+
+The FlatButton widget in Flutter is used to create a simple button without elevation (flat design).
+It is typically used for less important actions in the UI.
+
+
+⚠️ Note: FlatButton is deprecated in newer Flutter versions and replaced by TextButton, but it is still asked in exams.
+
+//main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: FlatButtonExample(),
+    );
+  }
+}
+
+class FlatButtonExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("FlatButton Example"),
+      ),
+      body: Center(
+        child: FlatButton(
+          onPressed: () {
+            print("FlatButton Clicked");
+          },
+          color: Colors.blue,
+          textColor: Colors.white,
+          child: Text("Click Me"),
+        ),
+      ),
+    );
+  }
+}

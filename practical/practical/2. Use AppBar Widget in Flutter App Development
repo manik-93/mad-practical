@@ -1,0 +1,60 @@
+2. Use AppBar Widget in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The AppBar widget in Flutter is used to create a top navigation bar in an application.
+It is a part of the Scaffold widget and provides features like:
+
+Title display
+Navigation icons (leading)
+Action buttons (right side)
+
+It helps in giving structure and navigation to the app.
+
+// main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: AppBarExample(),
+    );
+  }
+}
+
+class AppBarExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("My AppBar"),
+        leading: Icon(Icons.menu),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              print("Search clicked");
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.more_vert),
+            onPressed: () {
+              print("More options");
+            },
+          ),
+        ],
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: Text("AppBar Example"),
+      ),
+    );
+  }
+}

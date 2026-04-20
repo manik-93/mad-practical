@@ -1,0 +1,47 @@
+25. Use Flutter Icons in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+In Flutter, Icons are used to display graphical symbols that represent actions or information.
+
+Flutter provides built-in icons using Material Icons
+Icons are used with the Icon widget
+Improves UI design and user experience
+
+//main code
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: IconExample(),
+    );
+  }
+}
+
+class IconExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Flutter Icons Example"),
+      ),
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Icon(Icons.home, size: 40, color: Colors.blue),
+            Icon(Icons.favorite, size: 40, color: Colors.red),
+            Icon(Icons.settings, size: 40, color: Colors.green),
+          ],
+        ),
+      ),
+    );
+  }
+}

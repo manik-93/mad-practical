@@ -1,0 +1,55 @@
+21. Use ListView Widget in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The ListView widget in Flutter is used to display a scrollable list of widgets arranged vertically.
+
+Automatically provides scrolling
+Useful for long lists (contacts, messages, items)
+Can be created using:
+ListView()
+ListView.builder() (for dynamic lists)
+
+//main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ListViewExample(),
+    );
+  }
+}
+
+class ListViewExample extends StatelessWidget {
+  final List<String> items = [
+    "Item 1",
+    "Item 2",
+    "Item 3",
+    "Item 4",
+    "Item 5"
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("ListView Example"),
+      ),
+      body: ListView(
+        children: items.map((item) {
+          return ListTile(
+            title: Text(item),
+          );
+        }).toList(),
+      ),
+    );
+  }
+}

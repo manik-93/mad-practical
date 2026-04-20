@@ -1,0 +1,68 @@
+🔹 Step 1: Open Your Existing Project
+Open VS Code
+Click File → Open Folder
+Select your previous folder (PWA_Project)
+
+
+🔹 Step 2: Create Service Worker File
+Right-click → New File
+Name it: sw.js
+
+
+🔹 Step 3: Write Service Worker Code
+
+Open sw.js and add:
+
+// Install Event
+self.addEventListener('install', function(event) {
+    console.log("Service Worker Installed");
+});
+
+// Activate Event
+self.addEventListener('activate', function(event) {
+    console.log("Service Worker Activated");
+});
+
+
+
+🔹 Step 4: Register Service Worker in HTML
+
+Open index.html and add this inside <body> or before closing </body>:
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(function() {
+        console.log("Service Worker Registered");
+      })
+      .catch(function(error) {
+        console.log("Registration Failed:", error);
+      });
+  }
+</script>
+
+
+
+🔹 Step 5: Run the Application
+Right-click index.html
+Click Open with Live Server
+App opens in browser (http://127.0.0.1:5500)
+
+
+
+🔹 Step 6: Check Service Worker Registration
+Open browser
+Press F12 (Inspect)
+Go to Application Tab
+Click Service Workers
+You should see:
+Status: Activated ✔️
+File: sw.js
+
+
+🔹 Step 7: Verify in Console
+Go to Console Tab
+You should see:
+"Service Worker Registered"
+"Service Worker Installed"
+"Service Worker Activated"

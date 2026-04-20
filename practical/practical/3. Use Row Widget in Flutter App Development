@@ -1,0 +1,48 @@
+3. Use Row Widget in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The Row widget in Flutter is used to arrange multiple widgets horizontally (in a single line).
+It is useful when you want elements side by side like buttons, text, or icons.
+
+Key properties:
+
+mainAxisAlignment → controls horizontal spacing
+crossAxisAlignment → controls vertical alignment 
+
+//main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: RowExample(),
+    );
+  }
+}
+
+class RowExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Row Widget Example"),
+      ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Icon(Icons.star, size: 40, color: Colors.red),
+          Icon(Icons.star, size: 40, color: Colors.green),
+          Icon(Icons.star, size: 40, color: Colors.blue),
+        ],
+      ),
+    );
+  }
+}

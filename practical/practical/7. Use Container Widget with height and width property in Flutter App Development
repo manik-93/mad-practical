@@ -1,0 +1,50 @@
+7. Use Container Widget with height and width property in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The Container widget in Flutter uses height and width properties to define its size.
+These properties help in controlling the layout and dimensions of UI elements.
+
+height → sets vertical size
+width → sets horizontal size
+
+//main code
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ContainerSizeExample(),
+    );
+  }
+}
+
+class ContainerSizeExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Container Height & Width"),
+      ),
+      body: Center(
+        child: Container(
+          height: 150,
+          width: 250,
+          color: Colors.green,
+          child: Center(
+            child: Text(
+              "Fixed Size Box",
+              style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

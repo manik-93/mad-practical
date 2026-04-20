@@ -1,0 +1,51 @@
+1. Use SafeArea Widget in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The SafeArea widget in Flutter ensures that the UI of the app is displayed within the safe boundaries of the device.
+It avoids overlapping with system UI elements like:
+
+Status bar
+Notch
+Navigation bar
+
+This helps in making the app responsive and properly visible on all devices.
+
+// main code
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: SafeAreaExample(),
+    );
+  }
+}
+
+class SafeAreaExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("SafeArea Example"),
+      ),
+      body: SafeArea(
+        child: Container(
+          color: Colors.blue,
+          child: Center(
+            child: Text(
+              "This is inside SafeArea",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

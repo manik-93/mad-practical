@@ -1,0 +1,67 @@
+23. Use Card Widget in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The Card widget in Flutter is used to create a material design card layout with:
+
+Elevation (shadow)
+Rounded corners
+Structured content
+
+It is commonly used for:
+
+Product items
+User profiles
+Information panels
+
+//main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: CardExample(),
+    );
+  }
+}
+
+class CardExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Card Widget Example"),
+      ),
+      body: Center(
+        child: Card(
+          elevation: 8,
+          margin: EdgeInsets.all(20),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  "John Doe",
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 10),
+                Text("Software Developer"),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,63 @@
+16. Use Dropdown Button Widget in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The DropdownButton widget in Flutter is used to create a dropdown list that allows the user to select one item from multiple options.
+
+Displays a list when clicked
+Only one value can be selected at a time
+Commonly used in forms
+
+//main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: DropdownExample(),
+    );
+  }
+}
+
+class DropdownExample extends StatefulWidget {
+  @override
+  _DropdownExampleState createState() => _DropdownExampleState();
+}
+
+class _DropdownExampleState extends State<DropdownExample> {
+  String selectedItem = "India";
+
+  List<String> countries = ["India", "USA", "UK", "Canada"];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Dropdown Button Example"),
+      ),
+      body: Center(
+        child: DropdownButton<String>(
+          value: selectedItem,
+          items: countries.map((String item) {
+            return DropdownMenuItem<String>(
+              value: item,
+              child: Text(item),
+            );
+          }).toList(),
+          onChanged: (String? newValue) {
+            setState(() {
+              selectedItem = newValue!;
+            });
+          },
+        ),
+      ),
+    );
+  }
+}

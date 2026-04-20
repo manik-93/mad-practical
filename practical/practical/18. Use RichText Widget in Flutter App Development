@@ -1,0 +1,58 @@
+18. Use RichText Widget in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The RichText widget in Flutter is used to display text with multiple styles in a single line or paragraph.
+
+Allows combining different styles (color, size, font)
+Uses TextSpan to define styled parts
+Useful for highlighting specific word
+
+// main code 
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: RichTextExample(),
+    );
+  }
+}
+
+class RichTextExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("RichText Example"),
+      ),
+      body: Center(
+        child: RichText(
+          text: TextSpan(
+            text: "Hello ",
+            style: TextStyle(color: Colors.black, fontSize: 20),
+            children: [
+              TextSpan(
+                text: "Flutter",
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              TextSpan(
+                text: " World!",
+                style: TextStyle(color: Colors.green),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

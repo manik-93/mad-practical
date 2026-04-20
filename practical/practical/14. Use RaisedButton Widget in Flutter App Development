@@ -1,0 +1,50 @@
+14. Use RaisedButton Widget in Flutter App Development
+
+✅ Explanation (Exam-Oriented)
+
+The RaisedButton widget in Flutter is used to create a button with elevation (shadow effect), giving it a raised appearance.
+
+It is used for important actions in the UI
+Provides a 3D look with shadow
+
+⚠️ Note: RaisedButton is deprecated in newer versions and replaced by ElevatedButton, but still important for exams.
+
+//main code
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: RaisedButtonExample(),
+    );
+  }
+}
+
+class RaisedButtonExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("RaisedButton Example"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            print("RaisedButton Clicked");
+          },
+          color: Colors.green,
+          textColor: Colors.white,
+          elevation: 8,
+          child: Text("Submit"),
+        ),
+      ),
+    );
+  }
+}
