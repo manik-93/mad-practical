@@ -1,0 +1,46 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text("IT Department"),
+        backgroundColor: Colors.green,
+      ),
+
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            padding: EdgeInsets.all(10),
+            color: Colors.green,
+            child: Text(
+              "TEIT",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
+
+          Container(
+            padding: EdgeInsets.all(10),
+            color: Colors.green,
+            child: Text(
+              "AND",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
+
+          Container(
+            padding: EdgeInsets.all(10),
+            color: Colors.green,
+            child: Text(
+              "FAMT",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
+        ],
+      ),
+    ),
+  ));
+}
